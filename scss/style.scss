@@ -101,10 +101,10 @@ body {
         position: relative;
         max-height: 120px; 
         overflow: hidden; 
-        transition: max-height 0.5s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+        transition: max-height 0.5s cubic-bezier(0.05, 0.7, 0.1, 1);
         &.expanded {
             max-height: 2000px;
-            transition: max-height 0.5s cubic-bezier(0.83, 0.67, 0.17, 0.67);
+            transition: max-height 0.5s cubic-bezier(0.9, 0.1, 0.75, 0.05);
             .card__text::after {
                 display: none;
             }
