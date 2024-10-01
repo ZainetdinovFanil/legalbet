@@ -1,0 +1,19 @@
+{
+  "name": "legalbet",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "compile:scss": "node-sass scss/style.scss css/style.css",
+    "start": "gulp"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-sass": "^5.1.0",
+    "node-sass": "^9.0.0",
+    "sass": "^1.79.4"
+  }
+}

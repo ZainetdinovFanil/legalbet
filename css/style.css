@@ -1,0 +1,260 @@
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("../fonts/ProximaNova-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("../fonts/ProximaNova-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("../fonts/ProximaNova-Semibold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Futura PT";
+  src: url("../fonts/FuturaPT-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+body {
+  font-family: "Proxima Nova", sans-serif;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: black;
+}
+
+.card {
+  background-color: white;
+  max-width: 744px;
+  padding: 24px 0 16px;
+  border-radius: 8px;
+}
+.card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px 0;
+  margin: 0 24px 40px;
+}
+.card__autor {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.card__image {
+  height: 32px;
+  width: 32px;
+}
+.card__name {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+  margin-bottom: 2px;
+}
+.card__title--desctop {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  color: rgba(0, 0, 0, 0.4);
+}
+.card__info--desctop {
+  display: flex;
+  gap: 12px;
+  width: 368px;
+  justify-content: space-between;
+}
+.card__info--mobile {
+  display: none;
+}
+.card__subinfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.card__txt {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+}
+.card__txt--green {
+  color: #62B435;
+}
+.card__txt--gray {
+  color: rgba(0, 0, 0, 0.4);
+}
+.card__txt--red {
+  color: #F64747;
+}
+.card__body {
+  margin: 0 24px 24px;
+  position: relative;
+  max-height: 120px;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+.card__body.expanded {
+  max-height: none;
+}
+.card__body.expanded .card__text::after {
+  display: none;
+}
+.card__text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.card__text::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgb(255, 255, 255));
+  pointer-events: none;
+}
+.card__text--gray {
+  color: rgba(0, 0, 0, 0.6);
+}
+.card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 24px 24px 22px;
+  border-left: solid #3498DB;
+  gap: 16px;
+  position: relative;
+}
+.card__block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+  gap: 12px;
+}
+.card_outlook {
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 14px;
+  color: rgba(0, 0, 0, 0.4);
+}
+.card__forecast {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 20px;
+}
+.card__coefficient {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.card__rate {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+}
+.card__rate--mobile {
+  display: none;
+}
+.card__number {
+  font-family: "Futura PT", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+}
+.card__btn {
+  width: 140px;
+  height: 40px;
+  padding: 12px 16px 12px 16px;
+  border-radius: 4px;
+  background: #3498DB;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+  text-align: center;
+  color: white;
+}
+
+.lunge__block {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: calc(50% - 20px);
+  top: -25px;
+}
+.lunge__icon {
+  height: 16px;
+  width: 16px;
+  transition: transform 0.3s ease;
+}
+.lunge__icon.rotated {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 744px) {
+  .card {
+    width: 350px;
+  }
+  .card__title--desctop, .card__info--desctop, .card__rate--desctop {
+    display: none;
+  }
+  .card__rate--mobile {
+    display: inline;
+  }
+  .card__info--mobile {
+    display: block;
+  }
+  .card__info--mobile .card__txt {
+    font-weight: 400;
+  }
+  .card__info--mobile .card__txt--gray {
+    text-align: end;
+    font-weight: 600;
+  }
+  .card__header {
+    margin-bottom: 32px;
+    margin-left: 16px;
+    margin-right: 16px;
+    padding: 0;
+  }
+  .card__body {
+    margin-left: 16px;
+    margin-right: 16px;
+    padding: 0;
+  }
+  .card__footer {
+    display: block;
+    padding: 16px 16px 16px 14px;
+  }
+  .card__forecast {
+    font-size: 16px;
+    line-height: 18px;
+  }
+  .card__block {
+    margin-bottom: 16px;
+    align-items: end;
+  }
+  .card__prediction {
+    max-width: calc(100% - 102px);
+  }
+  .card__number {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+  }
+  .card__btn {
+    width: 100%;
+  }
+}
